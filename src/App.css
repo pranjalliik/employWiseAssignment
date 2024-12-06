@@ -1,0 +1,10 @@
+/* Backdrop style */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(8px); /* Apply the blur effect to the background */
+  z-index: 4; /* Ensure backdrop is behind the modal */
+}
