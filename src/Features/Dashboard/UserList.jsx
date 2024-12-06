@@ -142,13 +142,13 @@ const opendelModel = (user)=>{
 
                <div className='flex justify-center gap-x-2 mt-6 cursor-default'>
                <div className={`rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white text-lg font-semmibold  ${pageno == 1 && 'cursor-not-allowed'}`}  onClick={()=>nextPage((pageno? Number(pageno)  : 1) - 1)}>{'<'}</div>
-               {  (pageno? Number(pageno)  : 1)  >1 &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-white  text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + -1)}>{(pageno? Number(pageno)  : 1) - 1 }</div>      }
+               {  (pageno? Number(pageno)  : 1)  >1 &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg  bg-[#003032] text-white  text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + -1)}>{(pageno? Number(pageno)  : 1) - 1 }</div>      }
 
-                <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white text-lg font-semmibold'>{(pageno? Number(pageno)  : 1) }</div>
-            {  (pageno? Number(pageno)  : 1) + 1 <= totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-white text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + 1)}>{(pageno? Number(pageno)  : 1) + 1 }</div>      }
-            {   (pageno? Number(pageno)  : 1) + 2 <= totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-white text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + 2 )}>{(pageno? Number(pageno)  : 1) + 2 } </div>   }
-            {   totalPages - (pageno? Number(pageno)  : 1)  >= 4 &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-white text-lg font-semmibold' >...</div>   }   
-            {   (pageno? Number(pageno)  : 1) + 2 < totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-white text-lg font-semmibold ' onClick={()=>nextPage(totalPages)}>{totalPages}</div>   }   
+                <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg text-lg bg-white font-semmibold'>{(pageno? Number(pageno)  : 1) }</div>
+            {  (pageno? Number(pageno)  : 1) + 1 <= totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white  text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + 1)}>{(pageno? Number(pageno)  : 1) + 1 }</div>      }
+            {   (pageno? Number(pageno)  : 1) + 2 <= totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white  text-lg font-semmibold' onClick={()=>nextPage((pageno? Number(pageno)  : 1) + 2 )}>{(pageno? Number(pageno)  : 1) + 2 } </div>   }
+            {   totalPages - (pageno? Number(pageno)  : 1)  >= 4 &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white  text-lg font-semmibold' >...</div>   }   
+            {   (pageno? Number(pageno)  : 1) + 2 < totalPages &&  <div className=' rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white  text-lg font-semmibold ' onClick={()=>nextPage(totalPages)}>{totalPages}</div>   }   
 
                 <div className={` rounded-full h-10 w-10 text-center pt-2 shadow-lg bg-[#003032] text-white text-lg font-semmibold ${pageno == totalPages && 'cursor-not-allowed'}`} onClick={()=>nextPage((pageno? Number(pageno)  : 1) + 1)}>{'>'}</div>
 
