@@ -21,11 +21,10 @@ function UserList() {
    const {status , users , filteredUsers } = useSelector((state)=>state.users)
    const totalPages = 2
     useEffect(()=>{
-        console.log(totalPages)
+
         if(pageno){
-            console.log(typeof totalPages)
+
             if(Number(pageno)>totalPages){
-                console.log('hii p ', pageno , totalPages)
                searchParams.set('page', '2' );
                setSearchParams(searchParams);
             }else if(Number(pageno) < 1){

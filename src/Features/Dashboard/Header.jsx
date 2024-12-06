@@ -1,4 +1,4 @@
-import { logout } from '../Authentication/userSlice'
+import { logout } from '../Authentication/authSlice'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 

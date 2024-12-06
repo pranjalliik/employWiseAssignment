@@ -10,7 +10,7 @@ const initialState =  {
 }
 
 
-export const signin = createAsyncThunk("signin/user" , async({email , password})=>{
+export const signin = createAsyncThunk("signin/auth" , async({email , password})=>{
     let validate = signinvalidation(email,password)
     if(validate){
        throw new Error(validate)
@@ -22,14 +22,10 @@ export const signin = createAsyncThunk("signin/user" , async({email , password})
         headers: { 'Content-Type': 'application/json' },
         credentials: true
       })
-        console.log(response)
         return response.data
     }catch(err){
         
-        if(err.Error){
-            console.log(err)
-        }
-      //  console.log(err.response.data.error)
+     
         if(err.response.data.error === 'user not found'){
             throw new Error('user not found')
         }
@@ -39,8 +35,8 @@ export const signin = createAsyncThunk("signin/user" , async({email , password})
 } )
 
 
-const userSlice = createSlice({
-    name : 'user' ,
+const authSlice = createSlice({
+    name : 'auth' ,
     initialState , 
     reducers : {
         resetstate : (state , action)=>{
@@ -60,21 +56,18 @@ const userSlice = createSlice({
              state.loginstatus = 'loading'
         })
         .addCase(signin.fulfilled , (state, action)=>{
-            console.log(action.payload.token)
             localStorage.setItem("token", action.payload.token);
             state.loginstatus = 'success'
 
         })
         .addCase(signin.rejected, (state , action)=>{
-            console.log(action)
             state.loginstatus = ''
             state.loginerror = action.error.message
-            console.log(state.loginerror)
         })
     
     }
 })
 
-export const {resetstate , logout} = userSlice.actions
+export const {resetstate , logout} = authSlice.actions
 
-export default userSlice.reducer
+export default authSlice.reducer

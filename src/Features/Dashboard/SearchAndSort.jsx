@@ -11,7 +11,7 @@ function SearchAndSort() {
     const [selectedValue, setSelectedValue] = useState("");
 
     const handleChange = (event ) => {
-        console.log(event.target.value)
+
         if(event.target.value === 'id'){
         dispatch(sortUsers({sortBy : event.target.value}))
         }else{

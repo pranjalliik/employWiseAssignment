@@ -1,13 +1,13 @@
 import  { useState } from "react";
 import "./AuthForm.css";
 import { useDispatch , useSelector} from "react-redux";
-import { signin , resetstate } from "./userSlice";
+import { signin , resetstate } from "./authSlice";
 import { ThreeDots } from 'react-loader-spinner';
 import { useNavigate } from "react-router-dom";
 
 const AuthForm = () => {
 
- const {loginstatus , loginerror} = useSelector((state)=> state.user)
+ const {loginstatus , loginerror} = useSelector((state)=> state.auth)
 const dispatch = useDispatch()
 
 
@@ -28,7 +28,6 @@ const dispatch = useDispatch()
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(credentials)
     dispatch(signin({email : credentials.email , password : credentials.password}))
 
   }

@@ -15,10 +15,8 @@ const initialState = {
 export const getUsers = createAsyncThunk("users/get" , async({pageno})=>{
     try{
         let response = await axios.get(`https://reqres.in/api/users?page=${pageno}`)
-        console.log(response)
         return response.data ; 
     }catch(err){
-        console.log(err)
     }
 })
 
@@ -33,7 +31,6 @@ export const updateUser = createAsyncThunk("user/update" , async({id , body})=>{
                      return {data : response.data , id}
 
             }catch(err){
-                console.log(err)
             }
 })
 
@@ -75,7 +72,7 @@ const usersSlice = createSlice({
             }
           },
           searchUsers(state, action) {
-            console.log(action.payload)
+
             const query = action.payload.toLowerCase(); // Convert to lowercase for case-insensitive search
             state.filteredUsers = state.users.filter(
               (user) =>
@@ -101,7 +98,6 @@ const usersSlice = createSlice({
         })
         .addCase(getUsers.fulfilled , (state , action)=>{
             state.status = 'success'
-           console.log(action.payload.data)
            state.users = action.payload.data
            state.filteredUsers = action.payload.data
         })
@@ -112,7 +108,7 @@ const usersSlice = createSlice({
            state.updateStatus = 'loading'
         })
         .addCase(updateUser.fulfilled , (state , action)=>{
-            console.log(action.payload)
+
             const { id, data } = action.payload;
 
             // Update user in `users` array
