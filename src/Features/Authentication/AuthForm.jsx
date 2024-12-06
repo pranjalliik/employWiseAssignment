@@ -75,7 +75,7 @@ if(loginstatus === 'success'){
       height={10} // Set height of loader
       width={100} // Set width of loader
     /> }
-    { loginerror === 'loading' &&
+    { loginerror  &&
     <div>{loginerror}</div>
         }    </form>
 

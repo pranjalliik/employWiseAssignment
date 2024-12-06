@@ -9,10 +9,10 @@ Check out the live demo here: [Live Demo](https://employ-wise-assignment-taupe.v
 ### **Features**
 - Log in using the Reqres API.
 - View a paginated list of users.
-- Edit, delete users from the list..
+- Edit and delete users from the list.
 - Ensure route protection based on token authentication.
 - Client-side search functionality, search users by first name, last name, or email.
-- Sorting based on Alphabetical order and id no
+- Sorting based on alphabetical order and ID number.
 - Redux Toolkit with `createAsyncThunk` for asynchronous actions.
 - Styled using Tailwind CSS.
 
